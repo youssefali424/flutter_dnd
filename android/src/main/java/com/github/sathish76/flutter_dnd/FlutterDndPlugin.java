@@ -50,6 +50,8 @@ public class FlutterDndPlugin implements FlutterPlugin, MethodCallHandler {
     // be defined
     // in the same class.
     public static void registerWith(Registrar registrar) {
+        context = registrar.activeContext();
+        notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         final MethodChannel channel = new MethodChannel(registrar.messenger(), "flutter_dnd");
         channel.setMethodCallHandler(new FlutterDndPlugin());
     }
