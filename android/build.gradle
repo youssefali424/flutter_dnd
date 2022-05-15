@@ -1,4 +1,4 @@
-group 'com.github.sathish76.flutter_dnd'
+group 'com.github.youssefali424.flutter_dnd'
 version '1.0'
 
 buildscript {
