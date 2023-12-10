@@ -61,48 +61,51 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           title: const Text('Flutter DND Example app'),
         ),
         body: Center(
-          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <
-              Widget>[
-            Text('Current Filter: $_filterName'),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-                'isNotificationPolicyAccessGranted: ${_isNotificationPolicyAccessGranted ? 'YES' : 'NO'}'),
-            SizedBox(
-              height: 10,
-            ),
-            RaisedButton(
-              onPressed: () {
-                FlutterDnd.gotoPolicySettings();
-              },
-              child: Text('GOTO POLICY SETTINGS'),
-            ),
-            RaisedButton(
-              onPressed: () async {
-                setInterruptionFilter(FlutterDnd.INTERRUPTION_FILTER_NONE);
-              },
-              child: Text('TURN ON DND'),
-            ),
-            RaisedButton(
-              onPressed: () {
-                setInterruptionFilter(FlutterDnd.INTERRUPTION_FILTER_ALL);
-              },
-              child: Text('TURN OFF DND'),
-            ),
-            RaisedButton(
-              onPressed: () {
-                setInterruptionFilter(FlutterDnd.INTERRUPTION_FILTER_ALARMS);
-              },
-              child: Text('TURN ON DND - ALLOW ALARM'),
-            ),
-            RaisedButton(
-              onPressed: () {
-                setInterruptionFilter(FlutterDnd.INTERRUPTION_FILTER_PRIORITY);
-              },
-              child: Text('TURN ON DND - ALLOW PRIORITY'),
-            )
-          ]),
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text('Current Filter: $_filterName'),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                    'isNotificationPolicyAccessGranted: ${_isNotificationPolicyAccessGranted ? 'YES' : 'NO'}'),
+                SizedBox(
+                  height: 10,
+                ),
+                TextButton(
+                  onPressed: () {
+                    FlutterDnd.gotoPolicySettings();
+                  },
+                  child: Text('GOTO POLICY SETTINGS'),
+                ),
+                TextButton(
+                  onPressed: () async {
+                    setInterruptionFilter(FlutterDnd.INTERRUPTION_FILTER_NONE);
+                  },
+                  child: Text('TURN ON DND'),
+                ),
+                TextButton(
+                  onPressed: () {
+                    setInterruptionFilter(FlutterDnd.INTERRUPTION_FILTER_ALL);
+                  },
+                  child: Text('TURN OFF DND'),
+                ),
+                TextButton(
+                  onPressed: () {
+                    setInterruptionFilter(
+                        FlutterDnd.INTERRUPTION_FILTER_ALARMS);
+                  },
+                  child: Text('TURN ON DND - ALLOW ALARM'),
+                ),
+                TextButton(
+                  onPressed: () {
+                    setInterruptionFilter(
+                        FlutterDnd.INTERRUPTION_FILTER_PRIORITY);
+                  },
+                  child: Text('TURN ON DND - ALLOW PRIORITY'),
+                )
+              ]),
         ),
       ),
     );
